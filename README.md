@@ -1,1 +1,1 @@
-Learning is best done with fun projects. 
+Fun projects teach the best 
