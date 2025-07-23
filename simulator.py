@@ -1,8 +1,8 @@
 import pygame
 import pygame_gui
+import colorsys
 import random
 import math
-import colorsys
 
 # Initialize Pygame
 pygame.init()
@@ -13,7 +13,7 @@ HEIGHT = 600
 CELL_SIZE = 4
 COLS = WIDTH // CELL_SIZE
 ROWS = HEIGHT // CELL_SIZE
-DEFAULT_GRAVITY = 0.5
+DEFAULT_GRAVITY = 1.01
 DEFAULT_TERMINAL_VELOCITY = 10
 
 # Colors
@@ -63,7 +63,7 @@ color_wheel = pygame_gui.elements.UIImage(
 sand_size_slider = pygame_gui.elements.UIHorizontalSlider(
     relative_rect=pygame.Rect((WIDTH - 220, 220), (200, 20)),
     start_value=1,
-    value_range=(1, 10),
+    value_range=(1, 20),
     manager=manager
 )
 
@@ -221,7 +221,7 @@ clock = pygame.time.Clock()
 running = True
 
 while running:
-    time_delta = clock.tick(60) / 1000.0
+    time_delta = clock.tick(120) / 1000.0
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
